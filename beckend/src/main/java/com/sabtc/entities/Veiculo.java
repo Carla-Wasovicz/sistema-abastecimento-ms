@@ -31,7 +31,7 @@ public class Veiculo implements Serializable {
 	@Column(name = "capacidade_tanque")
 	private Integer capacidadeTanque;
 	@Column(name = "tipo_combustivel")
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	private Combustivel tipoCombustivel;
 	@ManyToOne
 	@JoinColumn(name = "id_tipo_fk")

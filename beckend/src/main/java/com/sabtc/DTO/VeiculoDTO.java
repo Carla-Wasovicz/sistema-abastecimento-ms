@@ -1,6 +1,9 @@
 package com.sabtc.DTO;
-
 import java.io.Serializable;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import com.sabtc.entities.Combustivel;
 import com.sabtc.entities.Veiculo;
 
@@ -8,13 +11,21 @@ public class VeiculoDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
+	@Size(min = 4, max = 4, message = "O tamanho minimo é 4 e no máximo 4 caracteres")
 	private Integer ano;
+	@NotBlank
 	private String placa;
+	@NotBlank
 	private String renavan;
+	@NotBlank
 	private String patrimonio;
+	@NotBlank
 	private String chassi;
+	@NotBlank
 	private String versao;
+	@NotBlank
 	private Integer capacidadeTanque;
+	@NotBlank
 	private Combustivel tipoCombustivel;
 	
 	public VeiculoDTO() {}

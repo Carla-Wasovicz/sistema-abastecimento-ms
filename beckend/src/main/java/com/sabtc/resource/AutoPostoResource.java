@@ -3,6 +3,8 @@ package com.sabtc.resource;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,7 +41,7 @@ public class AutoPostoResource {
 	return ResponseEntity.ok().body(dto);
 	} 
 	@PostMapping
-	public ResponseEntity<AutoPostoDTO> insert(@RequestBody AutoPostoDTO dto){
+	public ResponseEntity<AutoPostoDTO> insert(@Valid @RequestBody AutoPostoDTO dto){
 		dto = service.insert(dto);
 		
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{Id}").buildAndExpand(dto.getId()).toUri();

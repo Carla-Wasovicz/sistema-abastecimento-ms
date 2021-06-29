@@ -2,16 +2,24 @@ package com.sabtc.DTO;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 import com.sabtc.entities.Lotacao;
 
 public class LotacaoDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
-	private String descricao;	
+	@NotBlank
+	private String descricao;
+	@Email
 	private String email;
+	@NotBlank(message = "O campo é obrigatório")
 	private String site;
+	@NotBlank(message = "O campo é obrigatório")
 	private String telefone;
+	@NotBlank(message = "O campo é obrigatório")
 	private String endereco;
 	
 	public LotacaoDTO() {}

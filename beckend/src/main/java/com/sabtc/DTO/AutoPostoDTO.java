@@ -1,16 +1,29 @@
 package com.sabtc.DTO;
 
 import java.io.Serializable;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.br.CNPJ;
+
 import com.sabtc.entities.AutoPosto;
 
 public class AutoPostoDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
+	@Size(min = 8, max = 120, message = "O tamanho minimo é 8 e no máximo 120 caracteres")
+	@NotBlank(message = "O campo é obrigatório")
 	private String nomeFantasia;
+	@NotBlank(message = "O campo é obrigatório")
 	private String telefone;
+	@Email
 	private String email;
+	@CNPJ(message = "O CNPJ está incorreto")
 	private String CNPJ;
+	@NotBlank
 	private String endereco;
 	
 	public AutoPostoDTO() {}

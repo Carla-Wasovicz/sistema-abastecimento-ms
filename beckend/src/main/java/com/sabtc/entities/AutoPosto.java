@@ -128,5 +128,4 @@ public class AutoPosto implements Serializable {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
